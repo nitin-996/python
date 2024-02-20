@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+ {% block start %}
+
+
+    
+<h1>this is django tutorial</h1>
+
+ 
+
+<table>
+    <tr>
+      <th>serial no</th>
+      <th>people.name</th>
+      <th>age</th>
+    </tr>
+
+
+    <!-- to use for loop in django template , it is slightly diffrent syntex  -->
+    {% for people in peoples %}
+
+    <tr>
+      <td>{{forloop.counter}}</td>
+      <td>{{people.name}}</td>
+      <td>{{people.age}}</td>
+    </tr>
+   
+    {% endfor %}
+
+  </table>
+
+
+  {% endblock %}
+  
+
