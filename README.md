@@ -4,14 +4,6 @@ learn python basics
 # design pattern in python
  python used [mtv](https://www.geeksforgeeks.org/django-project-mvt-structure/) but node uses mvc folder structure pattern.
 
- # Django
-
- [w3school](https://www.w3schools.com/django/django_admin_create_user.php)
-
- # object create in django
-
- [one method needs to be save using save() function other method directly save it to db](https://stackoverflow.com/questions/26672077/django-model-vs-model-objects-create)
-
  # function annotation
 
  https://stackoverflow.com/questions/14379753/what-does-mean-in-python-function-definitions
@@ -129,11 +121,186 @@ Python provides various methods for dictionaries, including:
    ```python
    print("Hello", end='!')  # Output: Hello!
    ```
+# double underscores (__)
+ It is around an identifier are used for special methods or attributes. These are often called "magic methods" or "dunder" (double underscore) methods. One such commonly used special method is `__init__`, which is the constructor method.
 
+Here are a few examples of commonly used dunder methods:
 
+1. `__init__`: The constructor method, called when an object is created.
+2. `__str__`: Used to define the "informal" or printable string representation of an object. It is called by the built-in `str()` function and the `print()` function.
+3. `__repr__`: Used to define the "official" string representation of an object. It is called by the built-in `repr()` function and is intended to be unambiguous.
+4. `__len__`: Used to define the behavior of the `len()` function for an object.
+5. `__getitem__` and `__setitem__`: Used for getting and setting values using square bracket notation (`obj[key]`).
+6. `__call__`: Allows an object to be called like a function.
+
+Here's an example demonstrating `__str__` and `__repr__`:
+
+```python
+class MyClass:
+    def __init__(self, value):
+        self.value = value
+
+    def __str__(self):
+        return f"MyClass instance with value: {self.value}"
+
+    def __repr__(self):
+        return f"MyClass({self.value})"
+
+# Example usage
+obj = MyClass(42)
+
+print(str(obj))    # Output: MyClass instance with value: 42
+print(repr(obj))   # Output: MyClass(42)
+```
+
+more explaination about __str__
+
+Certainly! Let's consider a real-life analogy using a `Person` class. Without a custom `__str__` method, the default behavior provides less informative output, but with a custom `__str__`, we can make the output more meaningful.
+
+**Without Custom `__str__`:**
+```python
+class PersonWithoutStr:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+# Creating an instance without a custom __str__
+person = PersonWithoutStr(name="John", age=25)
+
+# Without a custom __str__, you get a less informative output
+print(person)
+# Output: <__main__.PersonWithoutStr object at 0x...>
+```
+
+In this case, the default `__str__` inherited from the base `object` class provides an output that includes the object's memory address but lacks human-readable information.
+
+**With Custom `__str__`:**
+```python
+class PersonWithStr:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def __str__(self):
+        return f"{self.name}, {self.age} years old"
+
+# Creating an instance with a custom __str__
+person = PersonWithStr(name="John", age=25)
+
+# With a custom __str__, you get a more meaningful output
+print(person)
+# Output: John, 25 years old
+```
+
+In this example, the `PersonWithStr` class has a custom `__str__` method. When you print or convert an instance of this class to a string, the custom `__str__` method is called, providing a more human-readable representation of the `Person` object.
+
+So, customizing `__str__` allows you to control how your objects are presented in a way that is more meaningful and useful for your specific class and its instances.
+
+# class decorators method
+
+In Python, decorators are a powerful feature that allows you to modify or extend the behavior of functions or methods. There are several built-in decorators in Python, and here are examples of a few of them:
+
+1. **`@staticmethod`:**
+   - Used to define a static method within a class.
+
+```python
+class MathOperations:
+    @staticmethod
+    def add(x, y):
+        return x + y
+
+result = MathOperations.add(3, 4)
+print(result)  # Output: 7
+```
+
+2. **`@classmethod`:**
+   - Used to define a class method within a class.
+
+```python
+class MyClass:
+    class_variable = 10
+
+    def __init__(self, instance_variable):
+        self.instance_variable = instance_variable
+
+    @classmethod
+    def class_method(cls):
+        return cls.class_variable
+
+result = MyClass.class_method()
+print(result)  # Output: 10
+```
+
+3. **`@property`:**
+   - Used to define a getter method for a class attribute.
+
+```python
+class Circle:
+    def __init__(self, radius):
+        self._radius = radius
+
+    @property
+    def radius(self):
+        return self._radius
+
+circle = Circle(5)
+print(circle.radius)  # Output: 5
+```
+
+4. **`@classmethod` and `@property` together:**
+   - Combining `@classmethod` and `@property` to create a read-only class property.
+
+```python
+class MyClass:
+    _class_variable = 42
+
+    @classmethod
+    @property
+    def class_variable(cls):
+        return cls._class_variable
+
+result = MyClass.class_variable
+print(result)  # Output: 42
+```
+
+These are just a few examples of built-in decorators in Python. Decorators provide a clean and concise way to extend or modify the behavior of functions or methods, and you can also create your own decorators for custom behavior.
+
+# decorator
+
+a decorator is a special type of function that is used to modify the behavior of another function or method. Decorators are a powerful and flexible feature of the language, allowing you to wrap or modify the functionality of functions dynamically.
+
+Here's a basic example of a decorator:
+
+```python
+def my_decorator(func):
+    def wrapper():
+        print("Something is happening before the function is called.")
+        func()
+        print("Something is happening after the function is called.")
+    return wrapper
+
+@my_decorator
+def say_hello():
+    print("Hello!")
+
+# Calling the decorated function
+say_hello()
+```
+
+In this example, `my_decorator` is a decorator function. The `@my_decorator` syntax is a shorthand way of applying the decorator to the `say_hello` function. When you call `say_hello()`, it is actually calling the wrapped version of the function defined by the `wrapper` function within the decorator. This allows you to execute code before and after the original function's execution.
+
+Decorators are commonly used for tasks such as logging, timing, access control, and more. Python provides a convenient syntax with the `@decorator` syntax, but decorators themselves are just functions that take a function as an argument and return a new function.
+
+It's important to note that decorators can be used with any callable object (functions, methods, or even class methods) and can be stacked to apply multiple transformations. They contribute to Python's support for metaprogramming, enabling dynamic modifications to the behavior of functions and methods.
 
 # important points
 
 * by deafult python and ruby support negating indexing.
 * [python does not have switch-case condition like other programming language](https://www.geeksforgeeks.org/switch-case-in-python-replacement/)
+* in python we can only create a single constructor. java support multi constructor with diffrent args. but not python.
+* [read this to make not accessible function,variable outside of class](https://www.geeksforgeeks.org/private-variables-python/)
+
+# polymorphisim
+
+https://www.geeksforgeeks.org/dunder-magic-methods-python/
 
