@@ -300,7 +300,8 @@ It's important to note that decorators can be used with any callable object (fun
 * in python we can only create a single constructor. java support multi constructor with diffrent args. but not python.
 * [read this to make not accessible function,variable outside of class](https://www.geeksforgeeks.org/private-variables-python/)
 
-# polymorphisim
+# points
 
-https://www.geeksforgeeks.org/dunder-magic-methods-python/
+- [polymorphisim](https://www.geeksforgeeks.org/dunder-magic-methods-python/)
 
+- [operators precedence](https://www.geeksforgeeks.org/precedence-and-associativity-of-operators-in-python/)
