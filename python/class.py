@@ -1,3 +1,6 @@
+# access modifiers
+
+
 class Car:
     def __init__(self, brand, model, year):
         self.brand = brand
@@ -50,5 +53,27 @@ car1.display_info()
 
 
 #################################################################################################
+
+
+
+
+class Student:
+    def set_name(self,name):
+        self.name= name  # class attribute
+
+    def get_name(self):
+        return self.name
+    
+
+
+Student1 = Student()     
+
+Student1.age = 24  # instance/object attribute
+Student1.set_name("ronak")
+tic=Student1.get_name()
+
+
+print(Student1.age)
+print(tic)
 
 

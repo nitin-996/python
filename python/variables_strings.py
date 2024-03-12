@@ -20,3 +20,24 @@ print(ord(ch))
 
 print(chr(z))
 
+
+# strings are immutable
+# string has indexing feature
+
+name = "ramotar malhotara"
+print(name[2:7])
+
+print(name.upper())
+
+str2 = name.capitalize()
+
+# strings methods
+
+# split
+# replace 
+
+
+st3 = "ria_mia_kia_lia_diya"
+
+spl = st3.split("_", 3)
+print(spl)
