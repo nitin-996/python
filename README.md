@@ -300,8 +300,38 @@ It's important to note that decorators can be used with any callable object (fun
 * in python we can only create a single constructor. java support multi constructor with diffrent args. but not python.
 * [read this to make not accessible function,variable outside of class](https://www.geeksforgeeks.org/private-variables-python/)
 
-# points
+- [eval funtion](https://www.geeksforgeeks.org/eval-in-python/)
+
+- [constructor](https://www.shiksha.com/online-courses/articles/constructors-in-python-definition-types-and-rules/#:~:text=Constructors%20in%20Python%20is%20a,value%20to%20the%20object's%20members.)
+
+- [access modifier](https://www.geeksforgeeks.org/access-modifiers-in-python-public-private-and-protected/)
 
 - [polymorphisim](https://www.geeksforgeeks.org/dunder-magic-methods-python/)
 
 - [operators precedence](https://www.geeksforgeeks.org/precedence-and-associativity-of-operators-in-python/)
+
+- [2d list](https://snakify.org/en/lessons/two_dimensional_lists_arrays/)
+
+- [asynchronus programming in python](https://www.geeksforgeeks.org/asyncio-in-python/)
+
+- [destructor](https://www.geeksforgeeks.org/destructors-in-python/)
+
+- [pass statement](https://www.w3schools.com/python/ref_keyword_pass.asp#:~:text=Python%20pass%20Statement&text=The%20pass%20statement%20is%20used,definitions%2C%20or%20in%20if%20statements.)
+
+In Python, whether an object is passed "by value" or "by reference" depends on whether the object is mutable or immutable:
+
+- **Mutable objects (pass by reference-like behavior):**
+  - Lists
+  - Dictionaries
+  - Sets
+  - Custom objects/classes (if they are designed to be mutable)
+
+- **Immutable objects (pass by value-like behavior):**
+  - Integers
+  - Floats
+  - Strings
+  - Tuples
+  - Frozensets
+  - Custom objects/classes (if they are designed to be immutable)
+
+Understanding the mutability of objects is crucial in Python to grasp how modifications to objects may or may not affect the original variables.

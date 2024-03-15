@@ -1,3 +1,5 @@
+import math
+import random
 name = input("name :")
 print(name)
 print(type(name))
@@ -36,8 +38,30 @@ str2 = name.capitalize()
 # split
 # replace 
 
+# https://www.w3schools.com/python/ref_string_format.asp
+
+print("the {} jumped over the {}".format("cow","fence"))
 
 st3 = "ria_mia_kia_lia_diya"
 
 spl = st3.split("_", 3)
 print(spl)
+
+
+
+pi=3.14
+
+print(round(pi))
+print(math.ceil(pi))
+print(math.floor(pi))
+print(pow(pi,2))
+print(math.sqrt(pi))
+
+
+
+x = random.randint(1,6)
+
+mylist = ["rock" , "paper" , "scissor"]
+
+z = random.choice(mylist)
+print(z)
