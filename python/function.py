@@ -34,3 +34,50 @@ def fact(n):
         return result
 
 print(fact(5))
+
+
+# higher order function = a function that either
+ # 1. accepts a function as an argument or 
+# 2. returns a function  (in python, functions are also treated as objects)
+
+
+def loud(text):
+    return text.upper()
+
+
+def low(text):
+    return text.lower()
+
+def write(func):
+    text = func("Hello")
+    return text
+
+print(write(low))    
+
+
+
+def divisor(x):
+    def dividend(y):
+        return y/x
+    return dividend
+
+divide = divisor(2)
+
+print(divide(10))
+
+
+# lambda function = function written in 1 line using lambda keyword
+#                    accepts any number of arguments but only has one expression.
+
+
+double = lambda x:x *2 
+
+print(double(5))
+
+
+
+
+
+
+
+

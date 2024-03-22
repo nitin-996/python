@@ -65,3 +65,8 @@ mylist = ["rock" , "paper" , "scissor"]
 
 z = random.choice(mylist)
 print(z)
+
+
+order= int(input("give your name"))
+
+print(f"this is {order}")

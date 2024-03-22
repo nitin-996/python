@@ -148,5 +148,112 @@ print("Result:", result)
 #######################################################################################3
 
 
+# super function = it is used to give access to the methods of a parent class.
+#                    returns a temporary object of a parent class when used.
 
 
+class Rectangle:
+   
+   def __init__(self, lenght,width):
+         self.lenght = lenght
+         self.width = width
+
+
+class Square(Rectangle):
+
+    def __init__(self, lenght,width):
+         super().__init__(lenght,width)
+
+    def   area(self):
+        return self.lenght*self.width 
+
+class Cube(Rectangle):
+
+    def __init__(self, lenght,width,height) -> None:
+        super().__init__(lenght,width)
+        self.height = height
+
+    def  area(self):
+        return self.lenght*self.width *self.height         
+
+cub=Cube(5,5,5)
+
+print(cub.area())
+
+
+
+## abstract class
+
+# prevents a user from creating an object of that class
+# comples a user  to override abstract methods in a child class
+
+#  anstract class = a class which contains one or more abstract methods.
+# abstract method =  a method that has a declaration but does not have an implementation.
+
+
+
+#### object argument
+
+class Car:
+
+    color = None
+
+def change(car,color):
+
+    car.color = color
+
+
+car_1=Car()    
+
+
+
+change(car_1,"blue")
+print(car_1.color)
+
+
+# duck typing concept = concept where the class of an object is less important than the method/attributes.
+# class type is not checked if minimum methods/attributes are present
+# https://www.geeksforgeeks.org/duck-typing-in-python/
+
+
+class Duck:
+    def walk(self):
+        print("This duck is walking")
+
+    def talk(self):
+        print("This duck is quacking")    
+
+class Chicken:
+    def walk(self):
+        print("This chicken is walking")
+
+    def talk(self):
+        print("This chicken is clucking")          
+
+
+class Person:
+    def catch(self, animal):
+        animal.walk()
+        animal.talk()
+        print("You caught the critter")
+
+duck = Duck()        
+chicken = Chicken()
+person = Person()
+
+person.catch(chicken)  # Passing an instance of the Chicken class
+
+
+# walrus operatoe :=
+
+# new to python 3.8
+# assignment expression aka walrus operator
+# assigns values to variables as part of a larger expression
+
+print(happy := True)
+
+foods =list()
+while food := input("what food do you like") != "quit":
+    foods.append(food)
+
+    
