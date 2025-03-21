@@ -1,3 +1,0 @@
-this 
- text is added from python exception_handling file
-this  text is added from python exception_handling filethis  text is added from python exception_handling file

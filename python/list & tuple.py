@@ -71,6 +71,9 @@ print(list_1)
 # list comprehention
 # a way to create a new list wioth less syntax
 
+list_1.index(5, "toppings")  # insert element at specific index.
+del list_1[1:4]  # will remove value from [start:stop] index
+list_1.clear() # clean complete list
 
 fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
 
@@ -133,3 +136,12 @@ print(no2)
 rev_tup=reversed(tup)
 
 print(*rev_tup)       
+
+
+
+# converting tuple into list
+items = [("products",10),("products2",20)]
+
+prices = list(map(lambda item: item[1] , items))
+
+print(prices)

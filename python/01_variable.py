@@ -1,3 +1,14 @@
+# both declaration is correct.
+
+# variable declaration with type annotation
+name: str = "nitin"
+age: int = 100
+
+# normal variable declaration
+car = "volvo"
+print(name , age)
+print(type(name))
+
 import math
 import random
 name = input("name :")

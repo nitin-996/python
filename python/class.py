@@ -19,7 +19,7 @@
 
 # #####################################################################
 
-# # inheritance 
+# # inheritance
 # # types single , multilevel and multi inheritance
 
 
@@ -55,18 +55,15 @@
 # #################################################################################################
 
 
-
-
 # class Student:
 #     def set_name(self,name):
 #         self.name= name  # class attribute
 
 #     def get_name(self):
 #         return self.name
-    
 
 
-# Student1 = Student()     
+# Student1 = Student()
 
 # Student1.age = 24  # instance/object attribute
 # Student1.set_name("ronak")
@@ -77,34 +74,28 @@
 # print(tic)
 
 
-
-
-
 ############################################################################
 
 
 class Car:
 
-    def __init__(self, model,year,color):
+    def __init__(self, model, year, color):
         self.chal = model
         self.saal = year
         self.rang = color
 
-    def new_feat(self,tires):
+    def new_feat(self, tires):
         self.tire = tires
 
 
-
-
-
-car1 = Car("toyota",2020,"blue")        
+car1 = Car("toyota", 2020, "blue")
 
 
 car1.new_feat("alloy wheels")
 print(car1.tire)
 
 
-######################### chaining ###########################3
+# chaining ###########################3
 
 class Calculator:
     def __init__(self, value=0):
@@ -129,6 +120,7 @@ class Calculator:
             print("Error: Cannot divide by zero.")
         return self  # Return self to allow chaining
 
+
 # Create an instance of the Calculator class
 calc = Calculator()
 
@@ -143,9 +135,7 @@ result = calc.add(5)\
 print("Result:", result)
 
 
-
-
-#######################################################################################3
+# 3
 
 
 # super function = it is used to give access to the methods of a parent class.
@@ -153,36 +143,37 @@ print("Result:", result)
 
 
 class Rectangle:
-   
-   def __init__(self, lenght,width):
-         self.lenght = lenght
-         self.width = width
+
+    def __init__(self, lenght, width):
+        self.lenght = lenght
+        self.width = width
 
 
 class Square(Rectangle):
 
-    def __init__(self, lenght,width):
-         super().__init__(lenght,width)
+    def __init__(self, lenght, width):
+        super().__init__(lenght, width)
 
-    def   area(self):
-        return self.lenght*self.width 
+    def area(self):
+        return self.lenght*self.width
+
 
 class Cube(Rectangle):
 
-    def __init__(self, lenght,width,height) -> None:
-        super().__init__(lenght,width)
+    def __init__(self, lenght, width, height) -> None:
+        super().__init__(lenght, width)
         self.height = height
 
-    def  area(self):
-        return self.lenght*self.width *self.height         
+    def area(self):
+        return self.lenght*self.width * self.height
 
-cub=Cube(5,5,5)
+
+cub = Cube(5, 5, 5)
 
 print(cub.area())
 
 
-
-## abstract class
+# abstract class
 
 # prevents a user from creating an object of that class
 # comples a user  to override abstract methods in a child class
@@ -191,23 +182,22 @@ print(cub.area())
 # abstract method =  a method that has a declaration but does not have an implementation.
 
 
-
-#### object argument
+# object argument
 
 class Car:
 
     color = None
 
-def change(car,color):
+
+def change(car, color):
 
     car.color = color
 
 
-car_1=Car()    
+car_1 = Car()
 
 
-
-change(car_1,"blue")
+change(car_1, "blue")
 print(car_1.color)
 
 
@@ -221,14 +211,15 @@ class Duck:
         print("This duck is walking")
 
     def talk(self):
-        print("This duck is quacking")    
+        print("This duck is quacking")
+
 
 class Chicken:
     def walk(self):
         print("This chicken is walking")
 
     def talk(self):
-        print("This chicken is clucking")          
+        print("This chicken is clucking")
 
 
 class Person:
@@ -237,7 +228,8 @@ class Person:
         animal.talk()
         print("You caught the critter")
 
-duck = Duck()        
+
+duck = Duck()
 chicken = Chicken()
 person = Person()
 
@@ -252,8 +244,6 @@ person.catch(chicken)  # Passing an instance of the Chicken class
 
 print(happy := True)
 
-foods =list()
+foods = list()
 while food := input("what food do you like") != "quit":
     foods.append(food)
-
-    
