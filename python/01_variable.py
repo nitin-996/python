@@ -1,83 +1,93 @@
-# both declaration is correct.
+# # both declaration is correct.
 
-# variable declaration with type annotation
-name: str = "nitin"
-age: int = 100
+# # variable declaration with type annotation
+# name: str = "nitin"
+# age: int = 100
 
-# normal variable declaration
-car = "volvo"
-print(name , age)
-print(type(name))
+# # normal variable declaration
+# car = "volvo"
+# print(name , age)
+# print(type(name))
 
-import math
-import random
-name = input("name :")
-print(name)
-print(type(name))
-
-
-# to print diffrent data type in a single print statement use , comma
-
-z=97
-
-print(name , z)
-
-# none is similar to null
-nothing = None 
-
-# this ord inbuild function print ascii value number
-ch = "a"
-print(ord(ch))
-
-# this ascii function print character corsponded to number
-
-print(chr(z))
+# import math
+# import random
+# name = input("name :")
+# print(name)
+# print(type(name))
 
 
-# strings are immutable
-# string has indexing feature
+# # to print diffrent data type in a single print statement use , comma
 
-name = "ramotar malhotara"
-print(name[2:7])
+# z=97
 
-print(name.upper())
+# print(name , z)
 
-str2 = name.capitalize()
+# # none is similar to null
+# nothing = None 
 
-# strings methods
+# # this ord inbuild function print ascii value number
+# ch = "a"
+# print(ord(ch))
 
-# split
-# replace 
+# # this ascii function print character corsponded to number
 
-# https://www.w3schools.com/python/ref_string_format.asp
-
-print("the {} jumped over the {}".format("cow","fence"))
-
-st3 = "ria_mia_kia_lia_diya"
-
-spl = st3.split("_", 3)
-print(spl)
+# print(chr(z))
 
 
+# # strings are immutable
+# # string has indexing feature
 
-pi=3.14
+# name = "ramotar malhotara"
+# print(name[2:7])
 
-print(round(pi))
-print(math.ceil(pi))
-print(math.floor(pi))
-print(pow(pi,2))
-print(math.sqrt(pi))
+# print(name.upper())
+
+# str2 = name.capitalize()
+
+# # strings methods
+
+# # split
+# # replace 
+
+# # https://www.w3schools.com/python/ref_string_format.asp
+
+# print("the {} jumped over the {}".format("cow","fence"))
+
+# st3 = "ria_mia_kia_lia_diya"
+
+# spl = st3.split("_", 3)
+# print(spl)
 
 
 
-x = random.randint(1,6)
+# pi=3.14
 
-mylist = ["rock" , "paper" , "scissor"]
+# print(round(pi))
+# print(math.ceil(pi))
+# print(math.floor(pi))
+# print(pow(pi,2))
+# print(math.sqrt(pi))
 
-z = random.choice(mylist)
-print(z)
 
 
-order= int(input("give your name"))
+# x = random.randint(1,6)
 
-print(f"this is {order}")
+# mylist = ["rock" , "paper" , "scissor"]
+
+# z = random.choice(mylist)
+# print(z)
+
+
+# order= int(input("give your name"))
+
+# print(f"this is {order}")
+
+
+global_variable = "variable1"
+
+def updating():
+    global global_variable
+    global_variable = "variable2"
+    
+updating()
+print(f"updating global varible from funtion{global_variable}")
