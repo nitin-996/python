@@ -1,20 +1,20 @@
 # # access modifiers
 
 
-# class Car:
-#     def __init__(self, brand, model, year):
-#         self.brand = brand
-#         self.model = model
-#         self.year = year
+class Car:
+    def __init__(self, brand, model, year):
+        self.brand = brand
+        self.model = model
+        self.year = year
 
-#     def display_info(self):
-#         return f"{self.brand} {self.model}, {self.year}"
+    def display_info(self):
+        return f"{self.brand} {self.model}, {self.year}"
 
-# # Create an object from the Car class
-# my_car = Car("Toyota", "Corolla", 2020)
+# Create an object from the Car class
+my_car = Car("Toyota", "Corolla", 2020)
 
-# # Display the car's information
-# print(my_car.display_info())
+# Display the car's information
+print(my_car.display_info())
 
 
 # #####################################################################

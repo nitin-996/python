@@ -1,0 +1,13 @@
+project_root: /tmp/devops_project
+structure:
+  - logs:
+      - app:
+          - 2025
+          - 2024
+      - system
+  - config:
+      - dev
+      - prod
+  - scripts:
+      - deployment
+      - monitoring

@@ -1,9 +1,9 @@
 import sys
 sys.path.append('/home/nitin/Prac_TECH/python/moduleDir')
-import mymodule
 
 
-print(mymodule.pi)
+
+
 
 # def dicData():
 #     return {
